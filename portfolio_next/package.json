@@ -1,0 +1,38 @@
+{
+  "name": "ffc_portfolio",
+  "version": "1.0.0",
+  "description": "FreeCodecampPortfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CliffCrerar/ffc-portfolio.git"
+  },
+  "keywords": [
+    "ffc"
+  ],
+  "author": "Cliff Crerar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CliffCrerar/ffc-portfolio/issues"
+  },
+  "homepage": "https://github.com/CliffCrerar/ffc-portfolio#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-markdown": "^4.0.8",
+    "styled-jsx": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.4",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0"
+  }
+}
