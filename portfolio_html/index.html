@@ -15,10 +15,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
     <style>
       @import url('https://fonts.googleapis.com/css?family=Fira+Sans|Montserrat&display=swap');
-      :root {
+       :root {
         box-sizing: border-box;
         --hr-red: #d20117;
         --hr-yellow: #ffce2c;
+        --heading-shad: 10px 10px 15px rgba(0, 0, 0, 0.3), 8px 8px 10px rgba(0, 0, 0, 0.4), 4px 4px 5px rgba(0, 0, 0, 0.6), 2px 2px 0px rgba(0, 0, 0, 0.7), 1px 1px 0px rgba(0, 0, 0, 0.8);
       }
       
       h1,
@@ -32,19 +33,23 @@
       }
       
       h1 {
-        font-size: 5em;
+        font-size: 7em;
       }
       
       h2 {
-        font-size: 3em;
+        font-size: 5em;
       }
       
       h3 {
-        font-size: 2em;
+        font-size: 4em;
       }
       
       h4 {
-        font-size: 1.5em;
+        font-size: 2.5em;
+      }
+      
+      h5 {
+        font-size: 2em;
       }
       
       a {
@@ -71,17 +76,21 @@
         /* border: 1px solid black; */
         position: relative;
         /* padding: 1vh 1vw; */
-        width: 100vw;
-        height: 100vh;
+        /* width: 100vw; */
+        /* height: 100vh; */
       }
       
       section:nth-child(1) {
         position: relative;
         background: var(--hr-yellow);
+        width: 100vw;
+        height: 100vh;
       }
       
       section:nth-child(2) {
         background: var(--hr-red);
+        width: 100vw;
+        height: 100vh;
       }
       
       section:nth-child(5) {
@@ -148,10 +157,9 @@
       }
       
       .nav-link a:hover {
-        color: blue;
+        color: white;
       }
     </style>
-
     <nav id="navbar" class="navbar">
       <h4>
         <i class="fas fa-chevron-left"></i>cliff-crerar/<i class="fas fa-chevron-right"></i>
@@ -170,6 +178,9 @@
           <li class="nav-link">
             <a href="#contact">Contact</a>
           </li>
+          <!-- <li>
+            <a href="./test.html">__test</a>
+          </li> -->
         </ul>
       </div>
     </nav>
@@ -189,11 +200,17 @@
           .welcome-header h1 {
             text-align: center;
             margin: 0;
+            letter-spacing: 10px;
+            color: var(--hr-red);
+            text-shadow: var(--heading-shad);
           }
           
           .welcome-header h3 {
             text-align: center;
             margin: 0;
+            letter-spacing: 3px;
+            color: var(--hr-red);
+            text-shadow: var(--heading-shad);
           }
           
           .welcome-background {
@@ -220,10 +237,13 @@
         </style>
         <header class="welcome-header">
           <h1>Portfolio</h1>
-          <h3>
-            <span class="fab fa-free-code-camp" aria-hidden="true"> </span
-						>freeCodeCamp
-					</h3>
+          <a>
+            <h3>
+              <span style="margin-right: 5px" class="fab fa-free-code-camp" aria-hidden="true">
+							</span
+							>freeCodeCamp
+						</h3>
+					</a>
 				</header>
 				<div class="welcome-background">
 					<div class="top" style="background:#d20117"></div>
@@ -243,117 +263,398 @@
 						box-shadow: 10px 0 20px 10px black;
 					}
 					.sub-header-1 h2 {
-						transform: skewX(10deg) rotate(10deg) translateY(50%);
+						transform: skewX(10deg) rotate(10deg) translateY(15%);
+						text-shadow: var(--heading-shad);
 					}
 				</style>
 				<header>
 					<div class="sub-header-1">
-						<h2>Projects</h2>
+						<h2 style="color: var(--hr-red)">Projects</h2>
 					</div>
 				</header>
 				<style>
-					.project-tile {
+					.projects {
 						position: relative;
-						background: rgba(0, 0, 255, 0.4);
+						/* background: rgba(0, 0, 255, 0.4); */
 						height: calc(100% - 10rem);
-						width: 100%;
+						width: 94vw;
 					}
 					.projects-grid {
 						display: grid;
 						grid-template-rows: auto auto;
 						grid-template-columns: auto auto auto auto;
+						grid-gap: 3vh 3vw;
+						margin: 0 3vw;
+					}
+					@media only screen and (max-width: 414px) {
+						.projects-grid {
+							display: flex;
+							flex-direction: column;
+							height: auto;
+						}
+
+						section {
+							height: auto;
+						}
+					}
+					.project-tile {
+						position: relative;
+						height: 100%;
+						width: 100%;
+						border-radius: 20px;
+						overflow: hidden;
+						box-shadow: 3px -3px 5px rgba(0, 0, 0, 0.4);
+					}
+					.project-link {
+						width: 100%;
+						position: absolute;
+						bottom: 0;
+						text-align: center;
+						background: white;
+						padding: 5px 0;
+						text-decoration: none;
+						color: var(--hr-red);
+					}
+					.project-link:hover {
+						color: var(--hr-yellow);
+					}
+					.project-frame {
+						height: 100%;
+						width: 100%;
 					}
 				</style>
-				<div class="project-tile projects-grid">
-					<div>
-						<a class="project-link">link</a>
+				<div class="projects projects-grid">
+					<div
+						class="project-tile"
+						style="background: url('https://s3-eu-west-1.amazonaws.com/cdn.general.webassets/ffc-tribute-page.png') no-repeat center center / auto 100% content-box">
+						<a
+							class="project-link"
+							href="https://codepen.io/Cliffenator/full/qmLRPr"
+							target="_blank">Tribute Page</a>
 					</div>
-					<div>
-						<a class="project-link">link</a>
+					<div
+						class="project-tile"
+						style="background: url('https://s3-eu-west-1.amazonaws.com/cdn.general.webassets/ffc-survey-form.png') no-repeat center center / auto 100% content-box">
+						<a
+							class="project-link"
+							href="https://codepen.io/Cliffenator/full/rQWbgL"
+							target="_blank">Survey Form</a>
 					</div>
-					<div>
-						<a class="project-link">link</a>
+					<div
+						class="project-tile"
+						style="background: url('https://s3-eu-west-1.amazonaws.com/cdn.general.webassets/ffc-product-landing-page.png') no-repeat center center / auto 100% content-box">
+						<a
+							class="project-link"
+							href="https://codepen.io/Cliffenator/full/OaWEZe"
+							target="_blank">Product Landing Page</a>
 					</div>
-					<div>
-						<a class="project-link">link</a>
+					<div
+						class="project-tile"
+						style="background: url('https://s3-eu-west-1.amazonaws.com/cdn.general.webassets/ffc-tech-doc.png') no-repeat center center / auto 100% content-box">
+						<a class="project-link" href="" target="_blank">Technical Document</a>
 					</div>
-					<div>
-						<a class="project-link">link</a>
+					<div
+						class="project-tile"
+						style="background: url('https://s3-eu-west-1.amazonaws.com/cdn.general.webassets/ffc-random-quote-machine.png') no-repeat center center / auto 100% content-box">
+						<a
+							class="project-link"
+							href="https://codepen.io/Cliffenator/full/wedePx"
+							target="_blank">Random Quote Machine</a>
 					</div>
-					<div>
-						<a class="project-link">link</a>
+					<div
+						class="project-tile"
+						style="background: url('https://s3-eu-west-1.amazonaws.com/cdn.general.webassets/ffc-wikipedia-search.png') no-repeat center center / auto 100% content-box">
+						<a
+							class="project-link"
+							href="https://codepen.io/Cliffenator/full/GMNOXG"
+							target="_blank">Wikipedia Search</a>
 					</div>
-					<div>
-						<a class="project-link">link</a>
-					</div>
-					<div>
-						<a class="project-link">link</a>
-					</div>
-				</div>
-			</section>
-			<!-- Transition Area - -->
-			<style>
-				.transition-area {
-					position: relative;
-					height: 20vh;
-					width: 100%;
-					overflow: hidden;
-					background: var(--hr-yellow);
-				}
-				.angle-block {
-					position: relative;
-					bottom: 0;
-					right: 0;
-					height: 100%;
-					min-width: 120vw;
-					transform-origin: bottom right;
-					transform: rotate(4deg) skewX(4deg) translateX(-10vw)
-						translateY(-10px);
-					background: var(--hr-red);
-					box-shadow: 10px 0 15px 5px black;
-				}
-			</style>
-			<div class="transition-area trans-area-1">
-				<div class="angle-block"></div>
-			</div>
-			<!-- section 3 -->
-			<section id="social">
-				<header>
-					<h2>Social</h2>
-				</header>
-			</section>
 
-			<!-- Transition Area 1 -->
-			<style>
-				.transition-area-1 {
-					position: relative;
-					height: 20vh;
-					width: 100%;
-					overflow: hidden;
-					background: var(--hr-red);
-				}
-				.angle-block-1 {
-					position: relative;
-					bottom: 0;
-					right: 0;
-					height: 100%;
-					min-width: 120vw;
-					transform-origin: bottom right;
-					transform: rotate(4deg) skewX(4deg) translateX(-5vw) translateY(-10px);
-					background: var(--hr-yellow);
-					box-shadow: 10px 0 15px 5px black;
-				}
-			</style>
-			<div class="transition-area-1 trans-area-1">
-				<div class="angle-block-1"></div>
-			</div>
-			<!-- section 4 -->
-			<section id="contact">
-				<header>
-					<h2>Contact</h2>
-				</header>
-			</section>
-		</main>
-		<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" async defer></script> -->
-	</body>
+					<div class="project-tile" style="background:white">
+						<span
+							style="font-size: 12em; position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%)"
+							class="fab fa-free-code-camp"
+							aria-hidden="true"></span>
+              <a class="project-link" target="_blank" style="cursor: not-allowed;">empty slot	</a>
+              </div>
+
+              <div class="project-tile" style="background:white">
+                <span style="font-size: 12em; position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%)" class="fab fa-free-code-camp" aria-hidden="true"></span>
+                <a class="project-link" target="_blank" style="cursor: not-allowed;">empty slot	</a>
+              </div>
+              </div>
+      </section>
+      <!-- Transition Area - -->
+      <style>
+        .transition-area {
+          position: relative;
+          height: 20vh;
+          width: 100%;
+          overflow: hidden;
+          background: var(--hr-yellow);
+        }
+        
+        .angle-block {
+          position: relative;
+          bottom: 0;
+          right: 0;
+          height: 100%;
+          min-width: 120vw;
+          transform-origin: bottom right;
+          transform: rotate(4deg) skewX(4deg) translateX(-10vw) translateY(-10px);
+          background: var(--hr-red);
+          box-shadow: 10px 0 15px 5px black;
+        }
+      </style>
+      <div class="transition-area trans-area-1">
+        <div class="angle-block"></div>
+      </div>
+      <!-- section 3 -->
+      <section id="social">
+        <style>
+          .social-links {
+            position: relative;
+            height:auto;
+            width: 100%;
+            /* background: rgba(0, 0, 255, 0.2); */
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+          }
+          
+          .social-btn {
+            margin: 20px 0;
+            border-radius: 50%;
+            box-shadow: /*  */
+            3px 3px 5px rgba(20, 20, 20, 0.3), -3px -3px 5px rgba(20, 20, 20, 0.3), -3px 3px 5px rgba(20, 20, 20, 0.3), 3px -3px 5px rgba(20, 20, 20, 0.3), /*  */
+            5px 5px 8px rgba(20, 20, 20, 0.4), -5px -5px 8px rgba(20, 20, 20, 0.4), -5px 5px 8px rgba(20, 20, 20, 0.4), 5px -5px 8px rgba(20, 20, 20, 0.4);
+            transition: 0.5s;
+          }
+          
+          .social-btn:hover {
+            box-shadow: 10px 10px 15px rgba(20, 20, 20, 0.3), -10px -10px 15px rgba(20, 20, 20, 0.3), -10px 10px 15px rgba(20, 20, 20, 0.3), 10px -10px 15px rgba(20, 20, 20, 0.3), 8px 8px 10px rgba(20, 20, 20, 0.4), -8px -8px 10px rgba(20, 20, 20, 0.4), -8px 8px 10px rgba(20, 20, 20, 0.4), 8px -8px 10px rgba(20, 20, 20, 0.4);
+            transform: scale(1.03);
+          }
+          
+          .social-btn:hover i {
+            color: white;
+          }
+          
+          .social-btn button {
+            font-size: 7em;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--hr-red);
+            color: var(--hr-yellow);
+            border: 0px solid transparent;
+          }
+          
+          .social-btn i {
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3), -1px 1px 5px rgba(0, 0, 0, 0.3), 1px -1px 5px rgba(0, 0, 0, 0.3), -1px -1px 5px rgba(0, 0, 0, 0.3);
+            transition: 0.5s;
+          }
+        </style>
+        <header>
+          <h2 style="color: var(--hr-red); text-shadow: var(--heading-shad)">
+            Social
+          </h2>
+        </header>
+        <div class="social-links">
+          <!-- SOCIAL facebook -->
+          <div class="social-btn">
+            <a href="https://www.facebook.com/cliff.crerar"  target="_blank">
+              <button>
+								<i class="fab fa-facebook-f"></i>
+							</button>
+            </a>
+          </div>
+          <!--/ SOCIAL facebook -->
+          <!-- SOCIAL LinkedIn -->
+          <div class="social-btn">
+            <a href="https://www.linkedin.com/in/clifford-crerar/"  target="_blank">
+              <button>
+								<i class="fab fa-linkedin-in"></i>
+							</button>
+            </a>
+          </div>
+          <!--/ SOCIAL LinkedIn -->
+          <!-- SOCIAL Instagram -->
+          <div class="social-btn">
+            <a href="https://www.instagram.com/cliffenator/"  target="_blank">
+              <button>
+								<i class="fab fa-instagram"></i>
+							</button>
+            </a>
+          </div>
+          <!-- SOCIAL Instagram -->
+          <!-- SOCIAL Twitter -->
+          <div class="social-btn">
+            <a href="https://twitter.com/Cliffenator" target="_blank">
+              <button>
+								<i class="fab fa-twitter"></i>
+							</button>
+            </a>
+          </div>
+          <!-- SOCIAL Twitter -->
+          <!-- SOCIAL Github -->
+          <div class="social-btn">
+            <a id="profile-link" href="https://github.com/CliffCrerar"  target="_blank">
+              <button>
+								<i class="fab fa-github-alt"></i>
+							</button>
+            </a>
+          </div>
+          <!-- SOCIAL Github -->
+          
+        </div>
+      </section>
+
+      <!-- Transition Area 1 -->
+      <style>
+        .transition-area-1 {
+          position: relative;
+          height: 20vh;
+          width: 100%;
+          overflow: hidden;
+          background: var(--hr-red);
+        }
+        
+        .angle-block-1 {
+          position: relative;
+          bottom: 0;
+          right: 0;
+          height: 100%;
+          min-width: 120vw;
+          transform-origin: bottom right;
+          transform: rotate(4deg) skewX(4deg) translateX(-5vw) translateY(-10px);
+          background: var(--hr-yellow);
+          box-shadow: 10px 0 15px 5px black;
+        }
+      </style>
+      <div class="transition-area-1 trans-area-1">
+        <div class="angle-block-1"></div>
+      </div>
+      <!-- section 4 -->
+      <section id="contact">
+        <header>
+          <h2 style="color: var(--hr-yellow); text-shadow: var(--heading-shad)">
+            Contact
+          </h2>
+        </header>
+        <style>
+          .form-container {
+            /* background: rgba(0, 0, 255, 0.2); */
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+          }
+          
+          .form {
+            background: #ffce2c;
+            padding: 50px;
+            width: 330px;
+            border-radius: 20px;
+            box-shadow: 1px 1px 0 0 rgb(20, 20, 20), 2px 2px 0 0 rgb(20, 20, 20), 3px 3px 0px 0px rgb(20, 20, 20), 4px 4px 8px 2px rgba(0, 0, 0, 0.8), 8px 8px 10px 11px rgba(0, 0, 0, 0.5), 10px 10px 15px 8px rgba(0, 0, 0, 0.3);
+          }
+          
+          h5 {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: Montserrat;
+          }
+          
+          form,
+          input,
+          textarea {
+            font-size: 1.2em;
+            font-family: Montserrat;
+          }
+          
+          input,
+          textarea {
+            box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.3);
+          }
+          
+          .input-group.input {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row wrap;
+            justify-content: space-between;
+            align-items: center;
+          }
+          
+          .input-group.textArea {
+            padding-bottom: 20px;
+          }
+          
+          textarea {
+            width: 100%;
+          }
+          
+          .input-group input,
+          .input-group textarea {
+            border-radius: 3px;
+            border: 0px transparent;
+            padding: 3px;
+          }
+          
+          .submit-btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+          }
+          
+          .submit-btn button {
+            font-size: 1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-family: Montserrat;
+            font-weight: bolder;
+            background: var(--hr-red);
+            color: var(--hr-yellow);
+            border: 3px solid transparent;
+            box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.3);
+            transition: 0.5s;
+          }
+          
+          .submit-btn button:hover {
+            background: var(--hr-yellow);
+            color: var(--hr-red);
+            border: 3px solid var(--hr-red);
+            box-shadow: 10px 8px 10px 3px rgba(0, 0, 0, 0.6), -10px 8px 10px 3px rgba(0, 0, 0, 0.6);
+          }
+        </style>
+        <div class="form-container">
+          <div class="form">
+            <h5>Send a message</h5>
+            <form class="contact-form">
+              <div class="input-group input">
+                <label for="#name">Name</label>
+                <input id="name" name="name" />
+              </div>
+              <div class="input-group input">
+                <label for="#email">e-mail</label>
+                <input id="email" name="email" />
+              </div>
+              <div class="input-group textArea">
+                <label for="#comment">Comment</label>
+                <textarea name="comment" id="comment"></textarea>
+              </div>
+              <div class="input-group submit-btn">
+                <button><strong>Submit</strong></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+
 </html>
