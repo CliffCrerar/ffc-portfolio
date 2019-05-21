@@ -88,7 +88,7 @@
         background: var(--hr-yellow);
       }
       
-      section:nth-child(8) {
+      section:nth-child(7) {
         background: var(--hr-red);
       }
       
@@ -251,70 +251,50 @@
 						<h2>Projects</h2>
 					</div>
 				</header>
-				<style>
-					.project-tile {
-						position: relative;
-						background: rgba(0, 0, 255, 0.4);
-						height: calc(100% - 10rem);
-						width: 100%;
-					}
-					.projects-grid {
-						display: grid;
-						grid-template-rows: auto auto;
-						grid-template-columns: auto auto auto auto;
-					}
-				</style>
-				<div class="project-tile projects-grid">
-					<div>
-						<a class="project-link">link</a>
-					</div>
-					<div>
-						<a class="project-link">link</a>
-					</div>
-					<div>
-						<a class="project-link">link</a>
-					</div>
-					<div>
-						<a class="project-link">link</a>
-					</div>
-					<div>
-						<a class="project-link">link</a>
-					</div>
-					<div>
-						<a class="project-link">link</a>
-					</div>
-					<div>
-						<a class="project-link">link</a>
-					</div>
-					<div>
-						<a class="project-link">link</a>
-					</div>
+				<div class="project-tile">
+					<a class="project-link"></a>
 				</div>
 			</section>
-			<!-- Transition Area - -->
+			<!-- Transition Area -->
 			<style>
 				.transition-area {
 					position: relative;
 					height: 20vh;
-					width: 100%;
+					width: 110vw;
+					display: flex;
+					transform: translate(-5vw, 0);
 					overflow: hidden;
-					background: var(--hr-yellow);
 				}
 				.angle-block {
 					position: relative;
-					bottom: 0;
-					right: 0;
+					box-shadow: 0px 10px 10px black;
+					z-index: 100;
+				}
+				.ab1 {
 					height: 100%;
-					min-width: 120vw;
-					transform-origin: bottom right;
-					transform: rotate(4deg) skewX(4deg) translateX(-10vw)
-						translateY(-10px);
+					width: 55%;
+					transform-origin: right top;
+					transform: rotate(4deg) skewX(4deg) translateY(-20px);
+					z-index: 100;
+				}
+				.ab2 {
+					height: 100%;
+					width: 55%;
+					transform-origin: left top;
+					transform: rotate(-4deg) skewX(-4deg) translateY(-20px);
+					z-index: 100;
+				}
+				/* custom css*/
+				.trans-area-1 {
+					background: var(--hr-yellow);
+				}
+				.trans-area-1 .angle-block {
 					background: var(--hr-red);
-					box-shadow: 10px 0 15px 5px black;
 				}
 			</style>
 			<div class="transition-area trans-area-1">
-				<div class="angle-block"></div>
+				<div class="angle-block ab1"></div>
+				<div class="angle-block ab2"></div>
 			</div>
 			<!-- section 3 -->
 			<section id="social">
@@ -322,31 +302,8 @@
 					<h2>Social</h2>
 				</header>
 			</section>
-
-			<!-- Transition Area 1 -->
-			<style>
-				.transition-area-1 {
-					position: relative;
-					height: 20vh;
-					width: 100%;
-					overflow: hidden;
-					background: var(--hr-red);
-				}
-				.angle-block-1 {
-					position: relative;
-					bottom: 0;
-					right: 0;
-					height: 100%;
-					min-width: 120vw;
-					transform-origin: bottom right;
-					transform: rotate(4deg) skewX(4deg) translateX(-5vw) translateY(-10px);
-					background: var(--hr-yellow);
-					box-shadow: 10px 0 15px 5px black;
-				}
-			</style>
-			<div class="transition-area-1 trans-area-1">
-				<div class="angle-block-1"></div>
-			</div>
+			<!-- Transition Area -->
+			<div class="transition-area"></div>
 			<!-- section 4 -->
 			<section id="contact">
 				<header>
